@@ -1,0 +1,38 @@
+﻿@model TDKAdminService.Models.AppUser
+
+@{
+    ViewBag.Title = "Usuń";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Usuń użytkownika</h2>
+
+<h3>Czy na pewno chcesz to zrobić? <br/> Użytkownik zostanie usunięty!</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.createdAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdAt.DateTime)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Powrót", "Index")
+        </div>
+    }
+</div>

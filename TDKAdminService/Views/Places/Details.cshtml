@@ -1,0 +1,75 @@
+﻿@model TDKAdminService.Models.Place
+
+@{
+    ViewBag.Title = "Szczegóły";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Szczegóły</h2>
+
+<div>
+    <h4> @Html.DisplayFor(model => model.placeName)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.placeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.placeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.placeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.placeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceAddess)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceAddess)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdAt.DateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updatedAt.DateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Powrót", "Index")
+</p>

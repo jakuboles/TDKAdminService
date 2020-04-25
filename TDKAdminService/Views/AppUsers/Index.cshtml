@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TDKAdminService.Models.AppUser>
+
+@{
+    ViewBag.Title = "Użytkownicy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Użytkownicy</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createdAt.DateTime)
+        </th>
+        <th>
+            Opcje
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createdAt.DateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.id })
+            @Html.ActionLink("Usuń", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
